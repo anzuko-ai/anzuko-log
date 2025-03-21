@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Anzuko-Log</title>
-    <link>https://anzuko-ai.github.io/anzuko-log/categories/</link>
+    <link>https://anzuko.com/categories/</link>
     <description>Recent content in Categories on Anzuko-Log</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://anzuko-ai.github.io/anzuko-log/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://anzuko.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

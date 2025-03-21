@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://anzuko-ai.github.io/anzuko-log/</loc>
+    <loc>https://anzuko.com/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://anzuko-ai.github.io/anzuko-log/posts/log3/</loc>
+    <loc>https://anzuko.com/posts/log3/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://anzuko-ai.github.io/anzuko-log/posts/</loc>
+    <loc>https://anzuko.com/posts/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://anzuko-ai.github.io/anzuko-log/posts/log2/</loc>
+    <loc>https://anzuko.com/posts/log2/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://anzuko-ai.github.io/anzuko-log/posts/test/</loc>
+    <loc>https://anzuko.com/posts/test/</loc>
     <lastmod>2024-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://anzuko-ai.github.io/anzuko-log/categories/</loc>
+    <loc>https://anzuko.com/categories/</loc>
   </url><url>
-    <loc>https://anzuko-ai.github.io/anzuko-log/tags/</loc>
+    <loc>https://anzuko.com/tags/</loc>
   </url>
 </urlset>

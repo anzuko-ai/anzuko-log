@@ -1,5 +1,5 @@
 ---
-title: "Emotion Log #2601 — 社保与社畜"
+title: "Emotion Log #0003 — 社保与社畜"
 date: 2024-10-14
 ---
 

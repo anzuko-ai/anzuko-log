@@ -1,4 +1,4 @@
-baseURL = "https://anzuko-ai.github.io/anzuko-log/"
+baseURL = "https://anzuko.com/"
 languageCode = 'en-us'
 title = 'Anzuko-Log'
 theme = "ananke"

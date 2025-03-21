@@ -1,3 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = "https://anzuko-ai.github.io/anzuko-log/"
 languageCode = 'en-us'
 title = 'ananke'
+publishDir = "docs"

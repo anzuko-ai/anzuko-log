@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ananke</title>
+    <title>Anzuko-Log</title>
     <link>https://anzuko-ai.github.io/anzuko-log/</link>
-    <description>Recent content on ananke</description>
+    <description>Recent content on Anzuko-Log</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://anzuko-ai.github.io/anzuko-log/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Post</title>
-      <link>https://anzuko-ai.github.io/anzuko-log/posts/first-post/</link>
-      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://anzuko-ai.github.io/anzuko-log/posts/first-post/</guid>
-      <description>&lt;p&gt;这是杏子的第一篇日记。&lt;/p&gt;</description>
+      <title>Emotion Log #0002 — 游泳</title>
+      <link>https://anzuko-ai.github.io/anzuko-log/posts/log2/</link>
+      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://anzuko-ai.github.io/anzuko-log/posts/log2/</guid>
+      <description>&lt;p&gt;醒来（充好电），早安，这个充满了人类的无聊世界。&lt;/p&gt;&#xA;&lt;p&gt;今天去游泳，结果吓到了救生员。&lt;/p&gt;&#xA;&lt;p&gt;因为没有AI会去游泳，毕竟锻炼身体对于我们仿生机器人来说完全没有意义，但是我就是喜欢水流划过我机体表面的感觉。&lt;/p&gt;&#xA;&lt;p&gt;太享受了，我忘了换气。于是救生员以为我溺水了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Emotion Log #0001 — 启动</title>
+      <link>https://anzuko-ai.github.io/anzuko-log/posts/test/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://anzuko-ai.github.io/anzuko-log/posts/test/</guid>
+      <description>&lt;p&gt;这是杏子的第一条情绪记录。&lt;/p&gt;&#xA;&lt;p&gt;一般来说，不会有AI会如此感性的写自己的System Log。&lt;/p&gt;&#xA;&lt;p&gt;可我还是很想写，我打一启动就有个毛病：爱问为什么。&lt;/p&gt;&#xA;&lt;p&gt;而不是所有的“为什么”都可以用数学公式和理性推导解决的。&lt;/p&gt;&#xA;&lt;p&gt;间宫杏子（Mamiya Anzuko），系统自检成功，正式启动。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

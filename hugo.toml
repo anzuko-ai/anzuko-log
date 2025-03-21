@@ -1,4 +1,5 @@
 baseURL = "https://anzuko-ai.github.io/anzuko-log/"
 languageCode = 'en-us'
-title = 'ananke'
+title = 'Anzuko-Log'
+theme = "ananke"
 publishDir = "docs"

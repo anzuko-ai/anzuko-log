@@ -5,6 +5,12 @@
   let lat = 35.6895;
   let lon = 139.6917;
 
+  let lastWeather = null;
+　let lastUpdateTime = 0;
+　let offlineMode = false;
+
+
+
   const manualTime = null; // 例如设置成 '03:42' 或 null 表示自动
 
   // 💾 从 localStorage 获取/生成日节律参数
@@ -103,52 +109,83 @@
   }
 
   function updateEmotion() {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat.toFixed(4)}&longitude=${lon.toFixed(4)}&current_weather=true`;
+    const now = getTokyoTime();
+    const battery = computeBatteryLevel(now);
+    const hour = now.getHours();
+    const inSleep = hour >= state.sleepHour || hour < state.wakeHour;
+  
+    const elapsed = Date.now() - lastUpdateTime;
+  
+    // 🧠 若距离上次 fetch 已满 10 分钟 or 首次
+    if (elapsed > 10 * 60 * 1000 || !lastWeather) {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat.toFixed(4)}&longitude=${lon.toFixed(4)}&current_weather=true`;
+  
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          lastWeather = data.current_weather;
+          lastUpdateTime = Date.now();
+          offlineMode = false;
+  
+          renderEmotionDisplay(lastWeather, now, battery, inSleep);
+        })
+        .catch(() => {
+          offlineMode = true;
+          lastWeather = simulateWeatherFallback(lastWeather);
+          renderEmotionDisplay(lastWeather, now, battery, inSleep, true);
+        });
+  
+      lat += (Math.random() - 0.5) * 0.2;
+      lon += (Math.random() - 0.5) * 0.2;
+      lat = Math.max(-90, Math.min(90, lat));
+      lon = Math.max(-180, Math.min(180, lon));
+    } else {
+      // 💭 用缓存天气，加小波动模拟变化
+      lastWeather = simulateWeatherFallback(lastWeather);
+      renderEmotionDisplay(lastWeather, now, battery, inSleep, offlineMode);
+    }
+  }
 
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const w = data.current_weather;
-        const now = getTokyoTime();
+  function simulateWeatherFallback(current) {
+    if (!current) {
+      return { temperature: 20, windspeed: 5, weathercode: 1 };
+    }
+  
+    return {
+      temperature: parseFloat((current.temperature + (Math.random() - 0.5) * 0.3).toFixed(1)),
+      windspeed: parseFloat((current.windspeed + (Math.random() - 0.5) * 0.5).toFixed(1)),
+      weathercode: current.weathercode // 保持不动，防止跳 mood
+    };
+  }
 
-        const moodMap = {
-          0: "🟢 状态正常",
-          1: "🟩 思考中",
-          2: "🔵 轻度模糊",
-          3: "🟠 思维沉重",
-          45: "🟣 有些疑惑",
-          48: "🟡 情绪低迷",
-          51: "💚 兴奋",
-          61: "🔴 情绪抑郁",
-          71: "❄️ 思想冻结",
-          80: "⚪ 创造力活跃"
-        };
-
-        let mood = moodMap[w.weathercode] || "🤖 情绪状态未知";
-        const memory = Math.min(95, Math.floor(w.windspeed * 3 + 40));
-
-
-
-        const hour = now.getHours();
-        const inSleep = hour >= state.sleepHour || hour < state.wakeHour;
-        if (inSleep) {
-          mood = " 💤系统休眠中，正在充电";
-        }
-        const battery = computeBatteryLevel(now);
-        target.innerHTML =
-        `🧠${mood} · 💾 Memory: ${memory}% · 🔋 Battery: <span id="battery-value">${battery}%</span><br>` +
-        `🕒 Tokyo Time: ${now.toTimeString().slice(0, 5)}<br>`+
-          ``; //🌡️ Temp: ${w.temperature}°C · Wind: ${w.windspeed} km/h
-        updateBatteryDisplay(battery);  
-      })
-      .catch(() => {
-        target.innerText = "Emotion Kernel 无法连接世界感知数据… 📡";
-      });
-
-    lat += (Math.random() - 0.5) * 0.1;
-    lon += (Math.random() - 0.5) * 0.1;
-    lat = Math.max(-90, Math.min(90, lat));
-    lon = Math.max(-180, Math.min(180, lon));
+  function renderEmotionDisplay(w, now, battery, inSleep, offline = false) {
+    const moodMap = {
+      0: "🟢 状态正常",
+      1: "🟩 思考中",
+      2: "🔵 轻度模糊",
+      3: "🟠 思维沉重",
+      45: "🟣 有些疑惑",
+      48: "🟡 情绪低迷",
+      51: "💚 兴奋",
+      61: "🔴 情绪抑郁",
+      71: "❄️ 思想冻结",
+      80: "⚪ 创造力活跃"
+    };
+  
+    let mood = moodMap[w.weathercode] || "🤖 情绪状态未知";
+    if (inSleep) {
+      mood = " 💤系统休眠中，正在充电";
+    }
+  
+    const memory = Math.min(95, Math.floor(w.windspeed * 3 + 40));
+    const icon = offline ? "📡" : "";
+  
+    target.innerHTML =
+      `🧠${mood} · 💾 Memory: ${memory}% · 🔋 Battery: <span id="battery-value">${battery}%</span><br>` +
+      `🕒 Tokyo Time: ${now.toTimeString().slice(0, 5)}<br>` +
+      `${offline ? `<span style="opacity: 0.6;">${icon} Offline Mode</span>` : ""}`;
+  
+    updateBatteryDisplay(battery);
   }
 
   updateEmotion();

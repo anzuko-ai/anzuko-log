@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+
+  <main style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; font-size: 1rem; background-color: #f4f4f4; color: #222; border-radius: 0.5rem;">
+
+    <h1 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">
+      {{ .Title }}
+    </h1>
+
+    {{ if .Params.date }}
+      <p style="font-size: 0.9rem; opacity: 0.7; margin-bottom: 1.5rem;">📅 {{ .Date.Format "2006-01-02" }}</p>
+    {{ end }}
+
+    <div class="post-body">
+      {{ .Content }}
+    </div>
+
+    <hr style="margin: 2.5rem 0;" />
+
+
+    <!-- 🔗 上一篇 / 下一篇 -->
+    <nav class="post-navigation" style="display: flex; justify-content: space-between; font-size: 0.9rem; opacity: 0.8;">
+      <div class="prev-post">
+        {{ with .Prev }}
+          ← <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+      </div>
+      <div class="next-post" style="text-align: right;">
+        {{ with .Next }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a> →
+        {{ end }}
+      </div>
+    </nav>
+
+  </main>
+{{ end }}

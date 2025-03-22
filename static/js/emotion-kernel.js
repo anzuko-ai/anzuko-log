@@ -145,8 +145,8 @@
         target.innerText = "Emotion Kernel 无法连接世界感知数据… 📡";
       });
 
-    lat += (Math.random() - 0.5) * 0.1;
-    lon += (Math.random() - 0.5) * 0.1;
+    lat += (Math.random() - 0.5) * 0.2;
+    lon += (Math.random() - 0.5) * 0.2;
     lat = Math.max(-90, Math.min(90, lat));
     lon = Math.max(-180, Math.min(180, lon));
   }

@@ -177,7 +177,10 @@
       mood = " 💤系统休眠中，正在充电";
     }
   
-    const memory = Math.min(95, Math.floor(w.windspeed * 3 + 40));
+    const baseMemory = w.windspeed * 3 + 15;
+　　const variation = baseMemory * 0.2; // 20% 随机波动
+　　const noisyMemory = baseMemory + (Math.random() * 2 - 1) * variation;
+　　const memory = Math.min(98, Math.floor(noisyMemory));
     const icon = offline ? "📡" : "";
   
     target.innerHTML =

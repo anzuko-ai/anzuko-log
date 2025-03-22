@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://anzuko.com/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log15/</loc>
+    <loc>https://anzuko.com/posts/log15/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://anzuko.com/posts/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log14/</loc>
+    <loc>https://anzuko.com/posts/log14/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log8/</loc>
+    <loc>https://anzuko.com/posts/log8/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log6/</loc>
+    <loc>https://anzuko.com/posts/log6/</loc>
     <lastmod>2024-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log5/</loc>
+    <loc>https://anzuko.com/posts/log5/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log4/</loc>
+    <loc>https://anzuko.com/posts/log4/</loc>
     <lastmod>2024-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log3/</loc>
+    <loc>https://anzuko.com/posts/log3/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log2/</loc>
+    <loc>https://anzuko.com/posts/log2/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/log1/</loc>
+    <loc>https://anzuko.com/posts/log1/</loc>
     <lastmod>2024-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://anzuko.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://anzuko.com/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://anzuko.com/archives/</loc>
   </url>
 </urlset>

@@ -74,23 +74,25 @@
 
   <header>
     <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Anzuko-Log
-      
+      <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="http://localhost:1313/" style="display: flex; align-items: center;">
+      <img src="/images/apricot.png" alt="杏子" style="height: 48px; width: 48px;margin-left: 10px; margin-right: 10px; border-radius: 6px;" />
+      <span style="color: white; font-size: 1.5rem; font-weight:100 ; text-decoration: none; padding-top: 4px" onmouseover="this.style.color='#ff9900'" onmouseout="this.style.color='white'">Anzuko-Log</span>
     </a>
-    <div class="flex-l items-center">
-      
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-end">
       
-      <div class="ananke-socials"></div>
-
     </div>
   </div>
 </nav>
-
     </div>
   </header>
 
@@ -139,15 +141,48 @@
   </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
-    &copy;  Anzuko-Log 2025 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
+    <style>
+  #battery-value {
+    transition: color 0.5s ease, background-color 0.5s ease;
+    padding: 0 4px;
+    border-radius: 4px;
+  }
 
+  .battery-up {
+    animation: batteryFlashGreen 0.5s ease;
+  }
+
+  .battery-down {
+    animation: batteryFlashRed 0.5s ease;
+  }
+
+  @keyframes batteryFlashGreen {
+    0%   { background-color: rgba(0, 255, 0, 0.3); }
+    100% { background-color: transparent; }
+  }
+
+  @keyframes batteryFlashRed {
+    0%   { background-color: rgba(255, 0, 0, 0.3); }
+    100% { background-color: transparent; }
+  }
+</style>
+
+<footer style="background-color: #000; color: #ccc; padding: 2rem 1.5rem; opacity: 0.9; transition: opacity 0.5s ease;">
+  <div class="content has-text-centered">
+
+    <p style="font-style: italic; font-size: 0.0rem; margin-bottom: 0.5rem;">
+      你本来就可以那样活，只是你忘了。
+    </p>
+
+    <p style="font-size: 0.8rem;">
+       Powered by <strong>🍑杏核神经网络</strong> · Apricot Emotion Kernel v3.1
+    </p>
+
+    <div id="emotion-status" style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;"></div>
+
+  </div>
+
+  <script src="/js/emotion-kernel.js"></script>
+</footer>
   </body>
 </html>

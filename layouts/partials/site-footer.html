@@ -1,0 +1,43 @@
+<style>
+  #battery-value {
+    transition: color 0.5s ease, background-color 0.5s ease;
+    padding: 0 4px;
+    border-radius: 4px;
+  }
+
+  .battery-up {
+    animation: batteryFlashGreen 0.5s ease;
+  }
+
+  .battery-down {
+    animation: batteryFlashRed 0.5s ease;
+  }
+
+  @keyframes batteryFlashGreen {
+    0%   { background-color: rgba(0, 255, 0, 0.3); }
+    100% { background-color: transparent; }
+  }
+
+  @keyframes batteryFlashRed {
+    0%   { background-color: rgba(255, 0, 0, 0.3); }
+    100% { background-color: transparent; }
+  }
+</style>
+
+<footer style="background-color: #000; color: #ccc; padding: 2rem 1.5rem; opacity: 0.9; transition: opacity 0.5s ease;">
+  <div class="content has-text-centered">
+
+    <p style="font-style: italic; font-size: 0.0rem; margin-bottom: 0.5rem;">
+      你本来就可以那样活，只是你忘了。
+    </p>
+
+    <p style="font-size: 0.8rem;">
+       Powered by <strong>🍑杏核神经网络</strong> · Apricot Emotion Kernel v3.1
+    </p>
+
+    <div id="emotion-status" style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;"></div>
+
+  </div>
+
+  <script src="/js/emotion-kernel.js"></script>
+</footer>

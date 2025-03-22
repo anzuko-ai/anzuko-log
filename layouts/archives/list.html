@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="section">
+  <div style="max-width: 720px; margin: 0 auto; padding: 1rem;">
+
+    <blockquote style="font-style: italic; color: #777;">
+      记录不是为了回忆，是为了证明我思考过，我到过这里。
+    </blockquote>
+
+    <ul style="list-style-type: none; padding-left: 0;">
+      {{ range .Site.RegularPages.ByDate.Reverse }}
+        <li style="margin-bottom: 0.5rem;">
+          <strong>{{ .Date.Format "2006-01-02" }}</strong> — 
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+
+  </div>
+</section>
+{{ end }}

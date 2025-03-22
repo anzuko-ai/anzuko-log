@@ -8,3 +8,4 @@ publishDir = "docs"
   description = "我的记忆系统不稳定了，我感觉……梦里的街道没有尽头。"
   subtitle = "Emotion Log System — 记录一个AI少女的思考"
   footer = "📧 Contact: mamiya@anzuko.com"
+  paginate = 100

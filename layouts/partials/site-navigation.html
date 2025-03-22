@@ -1,0 +1,21 @@
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ .Site.BaseURL }}" style="display: flex; align-items: center;">
+      <img src="/images/apricot.png" alt="杏子" style="height: 48px; width: 48px;margin-left: 10px; margin-right: 10px; border-radius: 6px;" />
+      <span style="color: white; font-size: 1.5rem; font-weight:100 ; text-decoration: none; padding-top: 4px" onmouseover="this.style.color='#ff9900'" onmouseout="this.style.color='white'">Anzuko-Log</span>
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-end">
+      {{ range .Site.Menus.main }}
+        <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </div>
+</nav>

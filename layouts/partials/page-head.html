@@ -1,0 +1,16 @@
+<style>
+    #battery-value {
+      transition: color 0.5s ease, background-color 0.5s ease;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+  
+    .battery-flash {
+      animation: batteryFlash 0.5s ease;
+    }
+  
+    @keyframes batteryFlash {
+      0%   { background-color: rgba(0, 255, 0, 0.3); }
+      100% { background-color: transparent; }
+    }
+  </style>

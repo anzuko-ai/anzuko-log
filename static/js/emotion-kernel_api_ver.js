@@ -21,5 +21,5 @@
     }
   
     fetchEmotionData();
-    setInterval(fetchEmotionData, 2000);
+    setInterval(fetchEmotionData, 86400);
   })();

@@ -13,7 +13,9 @@
  let offlineMode = false;
  let batteryLevel = 0;
 
-
+ const manualMoodCode = null;
+ const manualBatteryInit = null; // 例如设置为 60（百分比），null 表示自动
+ const manualTime = null ; // 例如设置成 '03:42' 或 null 表示自动
 
  function initBattery() {
   const saved = localStorage.getItem("emotion-battery");
@@ -42,9 +44,7 @@ const moodDrainMap = {
   80: 0.1
 };
 
-const manualMoodCode = null;
-const manualBatteryInit = null; // 例如设置为 60（百分比），null 表示自动
-const manualTime = null ; // 例如设置成 '03:42' 或 null 表示自动
+
  
   // 💾 从 localStorage 获取/生成日节律参数
   function getOrCreateDailyState() {
